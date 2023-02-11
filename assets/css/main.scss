@@ -1,0 +1,264 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css");
+
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "@/node_modules/bootstrap/scss/functions";
+
+//1193
+
+// Default variable overrides
+$primary: #e2b500;
+$secondary: #ff3d00; // rgba(0, 0, 0, 0.5); // #b185d6;
+$light: #f5f5f5;
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1193px,
+);
+
+// $enable-smooth-scroll: false;
+
+// $body-bg: #191970; // linear-gradient(180deg, rgba(#191970, 1) 0%, rgba(#080830, 1) 100%);
+$body-color: #444;
+$link-color: #444;
+$link-decoration: none;
+$link-hover-color: $light;
+
+// $text-light: #acb3df;
+
+// Typography
+$font-family-base: "Poppins", sans-serif;
+$font-size-base: 1rem;
+$line-height-base: 1.7;
+
+// navbar
+// $navbar-dark-color: #fff;
+$nav-link-padding-x: 6rem;
+
+// buttons
+$btn-active-box-shadow: 0;
+$btn-focus-width: 0;
+$btn-padding-y: 0.35rem;
+$btn-padding-x: 2rem;
+$btn-border-width: 0;
+$btn-border-radius: 5px;
+$btn-font-weight: 500;
+
+$badge-padding-x: 0.9rem;
+
+$btn-focus-width: 0;
+// $navbar-toggler-font-size: 2.5rem;
+
+// font sizes
+$h1-font-size: 96px;
+
+$font-weight-light: 300;
+$font-weight-normal: 500;
+$font-weight-bold: 700;
+$font-weight-base: 400;
+
+$headings-font-weight: 700;
+$spacer: 1rem; // default value
+$card-spacer-y: $spacer * 1.2;
+$card-spacer-x: $spacer * 1.8;
+
+$input-border-width: 0;
+$input-btn-focus-width: 0;
+$input-focus-bg: auto;
+
+$form-check-input-border: none;
+$form-check-input-width: 1.4em;
+$form-check-input-checked-bg-color: auto;
+
+$btn-close-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#ffffff'><path d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/></svg>");
+
+// 3. Include remainder of required Bootstrap stylesheets
+@import "@/node_modules/bootstrap/scss/variables";
+@import "@/node_modules/bootstrap/scss/maps"; // since bs 5.2
+@import "@/node_modules/bootstrap/scss/mixins";
+@import "@/node_modules/bootstrap/scss/utilities";
+
+// 4. Include any optional Bootstrap components as you like
+@import "@/node_modules/bootstrap/scss/root";
+@import "@/node_modules/bootstrap/scss/reboot";
+@import "@/node_modules/bootstrap/scss/buttons";
+@import "@/node_modules/bootstrap/scss/badge";
+@import "@/node_modules/bootstrap/scss/type";
+@import "@/node_modules/bootstrap/scss/images";
+@import "@/node_modules/bootstrap/scss/containers";
+@import "@/node_modules/bootstrap/scss/grid";
+@import "@/node_modules/bootstrap/scss/navbar";
+@import "@/node_modules/bootstrap/scss/nav";
+@import "@/node_modules/bootstrap/scss/card";
+// @import "@/node_modules/bootstrap/scss/dropdown";
+@import "@/node_modules/bootstrap/scss/forms";
+@import "@/node_modules/bootstrap/scss/transitions";
+
+// Helpers
+@import "@/node_modules/bootstrap/scss/helpers/position";
+@import "@/node_modules/bootstrap/scss/helpers/stacks";
+@import "@/node_modules/bootstrap/scss/helpers/ratio";
+
+// Utilities
+@import "@/node_modules/bootstrap/scss/utilities/api";
+
+// my customizations
+
+body {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &.disable-scroll {
+    overflow-y: hidden;
+    position: fixed;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent;
+}
+
+a {
+  transition: color 0.24s ease-in-out;
+}
+
+a.card:hover {
+  color: #fff;
+}
+
+.btn-secondary {
+  transition: background-color 0.24s ease-in-out;
+
+  &:hover,
+  &:active:hover,
+  &:focus {
+    background-color: $light;
+  }
+}
+
+// global css
+
+.img-c {
+  position: relative;
+
+  &:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 0.3rem;
+    transform: rotate(6deg);
+    background: #acb3df;
+    z-index: -1;
+  }
+
+  &:after {
+    content: "";
+    width: 98%;
+    height: 98%;
+    position: absolute;
+    left: 2%;
+    top: 2%;
+    border-radius: 0.3rem;
+    transform: rotate(2deg);
+    border: 6px solid #0be0d4;
+  }
+}
+
+.bg-c {
+  background-color: rgba(11, 224, 212, 0.2); // rgba(6, 6, 79, 0.5);
+  transition: background-color 0.4s ease-in-out;
+}
+
+a.bg-c {
+  &:hover {
+    background-color: rgba(11, 224, 212, 0.25); // rgba(6, 6, 79, 0.5);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.3s cubic-bezier(0.2, 0, 0.1, 1);
+}
+.page-enter,
+.page-leave-active {
+  opacity: 0.1;
+  transform: translateY(60px);
+}
+
+// a i.bi {
+//   display: inline-block;
+// }
+
+// // custom icons
+
+// .bi-16 {
+//   //
+//   width: 1rem;
+//   height: 1rem;
+//   line-height: 1rem;
+//   background-size: 1rem;
+// }
+
+// .bi-24 {
+//   width: 1.5rem;
+//   height: 1.5rem;
+//   line-height: 1.5rem;
+//   background-size: 1.5rem;
+// }
+// .bi-devpost {
+//   background-repeat: no-repeat;
+//   background-position: center center;
+//   background-image: url("@/images/devpost.svg");
+// }
+
+// .bi-codewars {
+//   background-repeat: no-repeat;
+//   background-position: center center;
+//   background-image: url("@/images/codewars.svg");
+// }
+
+// .bi-dev {
+//   background-repeat: no-repeat;
+//   background-position: center;
+//   background-image: url("@/images/dev.svg");
+// }
+
+//// custom inline list with bullets in between
+.bullet-list-inline {
+  padding-left: 0;
+
+  li {
+    $size: 6px; // bullet size
+    $padding: 1.7rem;
+    $line-height: 24.64px; // 16 * $line-height-base
+
+    display: inline;
+    position: relative;
+    padding-right: $padding;
+
+    &:not(:first-of-type)::before {
+      position: absolute;
+      content: "";
+      z-index: 2;
+      left: calc(($padding / -2) - $size);
+      top: calc($line-height/2 - $size/2 - 3px);
+      width: $size;
+      height: $size;
+      border-radius: 50%;
+      background-color: var(--bs-secondary);
+    }
+  }
+}

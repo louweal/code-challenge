@@ -18,6 +18,7 @@ $container-max-widths: (
 );
 
 $headings-font-weight: 700; // bold
+$h1-font-size: 3.375rem; // 54px
 $h2-font-size: 2.375rem; // 38px
 
 $grid-gutter-width: 1.875rem; // 30px
@@ -32,6 +33,7 @@ $aspect-ratios: (
   // additional ratios:
   "10x7": calc(7 / 10 * 100%),
   "3x4": calc(4 / 3 * 100%),
+  "8x5": calc(5 / 8 * 100%),
 );
 
 // $enable-smooth-scroll: false;
@@ -49,6 +51,7 @@ $font-family-base: "Poppins", sans-serif;
 $font-size-base: 1rem;
 $line-height-base: 1.5;
 
+$list-inline-padding: 2.25rem; // 36px
 // navbar
 // $navbar-dark-color: #fff;
 // $nav-link-padding-x: 6rem;
@@ -98,6 +101,13 @@ $input-placeholder-color: rgba(#444, 0.3);
   --body-color-c: #242424;
 }
 
+body {
+  &.disable-scroll {
+    overflow-y: hidden;
+    position: fixed;
+  }
+}
+
 a {
   transition: color 0.24s ease-in-out;
 }
@@ -110,10 +120,23 @@ a {
   cursor: pointer;
 }
 
-.btn-secondary {
+.btn {
   transition: background-color 0.24s ease-in-out;
   min-width: 151px;
+}
 
+.btn-white {
+  background-color: #fff;
+
+  &:hover,
+  &:active:hover,
+  &:focus {
+    background-color: $dark;
+    color: #fff;
+  }
+}
+
+.btn-secondary {
   &:hover,
   &:active:hover,
   &:focus {
@@ -145,6 +168,10 @@ a {
 }
 
 // global css
+
+.icon-gradient {
+  background: linear-gradient(0deg, $primary 0%, var(--primary-c) 100%);
+}
 
 .bg-linear-gradient {
   background: $primary;
@@ -193,6 +220,28 @@ a {
   background-color: rgba($light, 0.9);
 }
 
+.hero-blob {
+  overflow: visible;
+  &::before {
+    transform: translate(0%, -28%);
+    content: "";
+    // border: 2px solid green;
+    position: absolute;
+    width: min(100vw, 1395.653px);
+    height: min(98vw, 1365.653px);
+    z-index: -1;
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("@/images/blob-hero.svg");
+
+    @include media-breakpoint-up(lg) {
+      // width: 1395.653px;
+      // height: 1365.653px;
+    }
+  }
+}
+
 .section-blob {
   overflow: visible;
   &::before {
@@ -237,6 +286,32 @@ a {
     }
   }
 }
+
+.hero {
+  $img-width: 45vw;
+
+  // min-height: calc(($img-width * calc(5 / 8)) + 96px);
+
+  &__content {
+    @include media-breakpoint-up(lg) {
+      min-height: $img-width * calc(5 / 8);
+    }
+  }
+
+  &__visual {
+    box-shadow: 0px 0px 40px #0000001a;
+    width: 100%;
+    overflow: visible;
+    border: 8px solid white;
+    border-radius: 20px;
+
+    @include media-breakpoint-up(lg) {
+      width: $img-width;
+      height: $img-width * calc(5 / 8);
+    }
+  }
+}
+
 // icons
 .arrow-right {
   display: block;

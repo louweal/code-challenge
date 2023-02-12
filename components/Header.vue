@@ -1,6 +1,39 @@
 <template>
-  <nav class="navbar navbar-expand-lg p-md-3 px-lg-5 bg-primary">
-    <div class="container-fluid">
+  <div id="header" class="header position-absolute top-0 w-100 pb-lg-5">
+    <div class="container-lg">
+      <div class="row pt-3">
+        <div class="col-3">
+          <nuxt-link to="/" event="" @click.native="scrollToTop()">
+            <img
+              src="@/images/outhands-wit.svg"
+              alt="Outhands"
+              width="177"
+              height="42.32"
+            />
+          </nuxt-link>
+        </div>
+        <div class="col-6 text-center align-self-center d-none d-lg-block">
+          <ul class="list-inline mb-0">
+            <li
+              class="list-inline-item"
+              v-for="(l, i) in $options.menu"
+              :key="i"
+            >
+              <nuxt-link :to="l.url">
+                {{ l.title }}
+              </nuxt-link>
+            </li>
+          </ul>
+        </div>
+        <div class="col-3 text-end">
+          {{ $store.state.showPushmenu }}
+          <div class="btn btn-white" @click="togglePushmenu()">toggle</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <nav class="navbar navbar-expand-lg p-md-3 px-lg-5 xxxbg-primary">
+    <div class="container-lg">
       <nuxt-link to="/" event="" @click.native="scrollToTop()">
         <img
           src="@/images/outhands-wit.svg"
@@ -29,14 +62,14 @@
           </li>
 
           <li class="ms-lg-4 mt-4 mt-lg-0">
-            <a class="btn btn-secondary" href="/resume.pdf" target="_blank">
+            <nuxt-link class="btn btn-secondary text-white" to="/login">
               Login
-            </a>
+            </nuxt-link>
           </li>
         </ul>
       </div>
     </div>
-  </nav>
+  </nav> -->
 </template>
 
 <script>
@@ -54,12 +87,22 @@ export default {
         this.$router.push("/");
       }
     },
+    togglePushmenu() {
+      // document.body.classList.toggle("disable-scroll");
+
+      this.$store.commit("togglePushmenu");
+    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
-.navbar-toggler {
+.header {
+  position: absolute;
+  z-index: 2000 !important;
+}
+
+.navbar .navbar-toggler {
   border: none;
   box-shadow: none;
   padding: 0;

@@ -1,13 +1,9 @@
 export const state = () => ({
-  maxPosts: 2,
-  maxProjects: 3,
+  showPushmenu: false,
 });
 
 export const mutations = {
-  updateMaxPosts(state, payload) {
-    state.maxPosts = payload;
-  },
-  updateMaxProjects(state, payload) {
-    state.maxProjects = payload;
+  togglePushmenu(state) {
+    state.showPushmenu = !state.showPushmenu;
   },
 };

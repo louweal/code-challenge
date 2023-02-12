@@ -1,19 +1,19 @@
 <template>
   <main>
     <!-- Hero -->
-    <!-- <hero /> -->
+    <hero />
 
     <!-- Diensten -->
     <section>
-      <div class="container-lg">
+      <div class="container-lg my-5 mt-lg-5 py-lg-5">
         <div class="row">
-          <div class="col-12 col-lg-6">
-            <h2>
+          <div class="col-12 col-lg-6 mb-5 mb-lg-0">
+            <h2 class="text-dark">
               Sed ut perspiciatis <br />
               unde omnis iste
             </h2>
 
-            <p>
+            <p class="text-dark">
               Lorem ipsum dolor sit amet, consectetur
               <span class="fw-bold">adipiscing</span> elit, sed do eiusmod
               <span class="fw-bold">tempor incididunt</span> ut labore et dolore
@@ -36,7 +36,7 @@
 
     <!-- Nieuws / USPS / CTA -->
     <section class="section-blob">
-      <div class="container-lg py-4 my-4 py-lg-5 my-lg-5">
+      <div class="container-lg my-5 py-lg-5 my-lg-5">
         <div class="row h-100 d-flex-row align-items-lg-end">
           <div class="col-12 col-12-np col-lg-6">
             <div class="bg-light-90 border-radius-c py-5 px-4">

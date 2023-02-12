@@ -1,25 +1,36 @@
 [
   {
+    "icon": "001-piggy-bank",
     "title": "Concept & Strategie",
     "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
   },
   {
+    "icon": "002-check",
+
     "title": "Ontwerp & Vormgeving",
     "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
   },
   {
+    "icon": "003-scale",
+
     "title": "Websiteontwikkeling",
     "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
   },
   {
+    "icon": "004-search",
+
     "title": "E-commerce",
     "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
   },
   {
+    "icon": "005-check-1",
+
     "title": "Web applications",
     "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
   },
   {
+    "icon": "006-presentation",
+
     "title": "Internetmarketing",
     "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
   }

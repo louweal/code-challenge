@@ -1,7 +1,7 @@
 [
-  { "title": "Home", "url": "/", "hash": "#home" },
-  { "title": "About", "url": "/", "hash": "#about" },
-  { "title": "Projects", "url": "/", "hash": "#projects" },
-  { "title": "Posts", "url": "/", "hash": "#posts" },
-  { "title": "Contact", "url": "/", "hash": "#contact" }
+  { "title": "Over ons", "url": "/over-ons" },
+  { "title": "Diensten", "url": "/diensten" },
+  { "title": "Thema's", "url": "/themas" },
+  { "title": "Nieuws", "url": "/nieuws" },
+  { "title": "Contact", "url": "/contact" }
 ]

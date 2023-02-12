@@ -228,7 +228,7 @@
                 class="border-radius-c"
                 style="background-size: cover; background-position: center"
                 :style="{
-                  backgroundImage: `url(${require('@/images/kernwaarde-visual.jpg')}`,
+                  backgroundImage: `url(${require('@/images/kernwaarde-visual.webp')}`,
                 }"
               ></div>
             </div>
@@ -254,5 +254,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped></style>

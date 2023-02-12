@@ -1,5 +1,5 @@
 <template>
-  <div id="header" class="header position-absolute top-0 min-vw-100 pb-lg-5">
+  <div id="header" class="header position-absolute top-0 w-100 pb-lg-5">
     <div class="container-lg">
       <div class="d-flex justify-content-between pt-3 pt-lg-g4">
         <div>
@@ -27,7 +27,10 @@
         </div>
         <div>
           <div>
-            <nuxt-link to="/login" class="btn btn-secondary d-none d-lg-block">
+            <nuxt-link
+              to="/login"
+              class="btn btn-secondary d-none d-lg-block text-white"
+            >
               Login
             </nuxt-link>
           </div>

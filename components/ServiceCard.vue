@@ -7,6 +7,7 @@
         :src="require(`@/images/icons/${data.icon}.svg`)"
         width="48"
         height="48"
+        :alt="data.icon"
       />
     </div>
     <h4 class="service-card__title">{{ data.title }}</h4>

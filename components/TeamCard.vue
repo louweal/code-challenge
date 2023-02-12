@@ -28,8 +28,8 @@ export default {
 
 <style lang="scss">
 .team-card {
-  opacity: 0;
-  animation: toggle 0.75s ease-in-out forwards;
+  // opacity: 0;
+  // animation: toggle 0.75s ease-in-out forwards;
   max-width: 173px !important;
   min-width: 173px !important;
 
@@ -41,9 +41,9 @@ export default {
   }
 }
 
-@keyframes toggle {
-  to {
-    opacity: 1;
-  }
-}
+// @keyframes toggle {
+//   to {
+//     opacity: 1;
+//   }
+// }
 </style>

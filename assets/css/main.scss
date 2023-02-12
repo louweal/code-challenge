@@ -4,8 +4,8 @@
 @import "@/node_modules/bootstrap/scss/functions";
 
 // Default variable overrides
-$primary: #e2b500; // #e2b500;
-$secondary: #ff3d00; // rgba(0, 0, 0, 0.5); // #b185d6;
+$primary: #e2b500;
+$secondary: #ff3d00;
 $light: #f5f5f5;
 $dark: #242424;
 $success: #21910c;
@@ -92,8 +92,9 @@ $input-placeholder-color: rgba(#444, 0.3);
 }
 
 body {
-  width: 100%;
   &.disable-scroll {
+    // when pushmenu is open
+    width: 100%;
     overflow-y: hidden;
     position: fixed;
   }
@@ -104,7 +105,7 @@ a {
 }
 
 .fw-regular {
-  font-weight: 500; // ?  400;
+  font-weight: 500;
 }
 
 .cursor-pointer {
@@ -156,8 +157,6 @@ a {
     padding-left: calc(var(--bs-gutter-x) * 0.5);
   }
 }
-
-// global css
 
 .icon-gradient {
   background: linear-gradient(0deg, $primary 0%, var(--primary-c) 100%);
@@ -270,6 +269,7 @@ a {
   }
 }
 
+// hero styling and animations
 .hero {
   $img-width: 45vw;
 

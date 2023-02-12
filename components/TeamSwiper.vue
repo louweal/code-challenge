@@ -7,18 +7,10 @@
           :key="i"
           v-for="(person, i) in $options.team"
         />
-
-        <!-- <template v-for="(person, i) in $options.team">
-          <div
-            xxxxclass="col"
-            xxxclass="`col-${12 / personsPerPage}`"
-            :key="i"
-            xxxv-if="page * personsPerPage > i && (page - 1) * personsPerPage <= i"
-          >
-          </div>
-        </template> -->
       </div>
     </div>
+
+    <!-- not working yet -> replace by SwiperJS? -->
 
     <div class="pagination d-flex justify-content-end mt-3">
       <span

@@ -1,9 +1,14 @@
 <template>
-  <div id="app" class="position-relative top-0">
+  <div id="app">
     <Header />
-    <div id="pushdown"></div>
-    <Nuxt />
-    <Footer />
+
+    <div class="min-vh-100 d-flex flex-column justify-content-between">
+      <!-- pushes content below absolute positioned header -->
+      <div id="pushdown" />
+
+      <Nuxt />
+      <Footer />
+    </div>
 
     <pushmenu />
   </div>
@@ -15,10 +20,21 @@ export default {
 
   transition: "page",
 
+  watch: {
+    $route(to, from) {
+      if (this.$store.state.showPushmenu) {
+        document.body.classList.toggle("disable-scroll");
+        this.$store.commit("togglePushmenu");
+      }
+    },
+  },
+
   async mounted() {
-    let headerHeight = document.querySelector("#header").offsetHeight; //refs ?
-    let pushdown = document.querySelector("#pushdown"); // refs?
-    pushdown.style.height = headerHeight + "px";
+    let header = document.querySelector("#header");
+    let pushdown = document.querySelector("#pushdown");
+    if (header && pushdown) {
+      pushdown.style.height = header.offsetHeight + "px";
+    }
   },
 };
 </script>

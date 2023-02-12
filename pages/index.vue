@@ -96,7 +96,7 @@
               </ul>
             </div>
 
-            <div class="bg-linear-gradient border-radius-c mt-3 px-4 py-4">
+            <div class="bg-linear-gradient border-radius-c mt-3 px-5 py-5">
               <h4 class="text-dark">Teruggebeld worden?</h4>
 
               <p class="text-dark">
@@ -148,8 +148,8 @@
             <text-link title="Meer over ons" path="/over-ons" />
           </div>
           <div class="col-12 col-12-nrp col-lg-6 offset-lg-1">
-            <team-swiper persons-per-page="2" class="d-lg-none" />
-            <team-swiper persons-per-page="3" class="d-none d-lg-block" />
+            <team-swiper :persons-per-page="2" class="d-lg-none" />
+            <team-swiper :persons-per-page="3" class="d-none d-lg-block" />
           </div>
         </div>
       </div>

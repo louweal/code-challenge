@@ -5,7 +5,11 @@
         <div>
           <nuxt-link to="/" event="" @click.native="scrollToTop()">
             <img
-              src="@/images/outhands-wit.svg"
+              :src="
+                $route.path === '/'
+                  ? require('@/images/outhands-wit.svg')
+                  : require('@/images/outhands.svg')
+              "
               alt="Outhands"
               width="177"
               height="42.32"
@@ -35,7 +39,11 @@
             </nuxt-link>
           </div>
 
-          <div class="fs-2 text-white d-lg-none" @click="togglePushmenu()">
+          <div
+            class="fs-2 d-lg-none"
+            :class="$route.path === '/' ? 'text-white' : false"
+            @click="togglePushmenu()"
+          >
             <i
               class="bi"
               :class="$store.state.showPushmenu ? 'bi-x-lg' : 'bi-list'"

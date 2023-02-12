@@ -1,8 +1,8 @@
 <template>
-  <div class="bg-light pt-lg-5">
+  <div class="bg-light pt-5 mt-lg-5">
     <div class="container-lg">
-      <div class="row pb-lg-5">
-        <div class="col-lg-3">
+      <div class="row pb-lg-5 text-center text-lg-start">
+        <div class="col-lg-3 mb-4">
           <nuxt-link to="/" event="" @click.native="scrollToTop()">
             <img
               src="@/images/outhands.svg"
@@ -20,14 +20,14 @@
             Zuid-Holland
           </address>
         </div>
-        <div class="col-lg-3">
+        <div class="col-lg-3 pb-3">
           <p>
-            <br />
-            Tel. 071 78 53215 <br />
-            Mail. squad@outhands.nl
+            <br class="d-none d-lg-block" />
+            Tel. <a href="tel:071 78 53215">071 78 53215</a> <br />
+            Mail. <a href="mailto:squad@outhands.nl">squad@outhands.nl</a>
           </p>
         </div>
-        <div class="col-lg-3">
+        <div class="col-lg-3 pb-5">
           <p>
             <span class="fw-bold">Werktijden</span><br />
             Ma - Vr: 09:00-17:00 <br />
@@ -36,24 +36,17 @@
         </div>
       </div>
 
-      <div class="row font-small pt-lg-4">
+      <div class="row font-small pt-lg-4 pb-4 pb-lg-0">
         <div class="col-12 col-lg-8">
           <p class="text-center text-lg-start">
-            Copyright 2022 · Alle rechten voorbehouden · Algemene Voorwaarden ·
-            Privacyverklaring
+            Copyright {{ new Date().getFullYear() }} · Alle rechten voorbehouden
+            ·
+            <nuxt-link to="/algemene-voorwaarden"
+              >Algemene Voorwaarden</nuxt-link
+            >
+            ·
+            <nuxt-link to="/privacyverklaring">Privacyverklaring</nuxt-link>
           </p>
-          <!-- <ul class="bullet-list-inline">
-            <li>Copyright {{ new Date().getFullYear() }}</li>
-            <li>Alle rechten voorbehouden</li>
-            <li>
-              <nuxt-link to="/algemene-voorwaarden"
-                >Algemene voorwaarden</nuxt-link
-              >
-            </li>
-            <li>
-              <nuxt-link to="/privacyverklaring">Privacyverklaring</nuxt-link>
-            </li>
-          </ul> -->
         </div>
         <div class="col-12 col-lg-4 text-center text-lg-end">
           Ontwikkeling door

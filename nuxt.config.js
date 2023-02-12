@@ -7,7 +7,7 @@ export default {
     base: "/",
   },
   head: {
-    title: "Anneloes Louwe | Portfolio",
+    title: "Outhands | Code challenge",
     htmlAttrs: {
       lang: "en",
     },
@@ -17,8 +17,7 @@ export default {
       {
         hid: "description",
         name: "description",
-        content:
-          "Anneloes Louwe | Front-end developer - UX designer - Web3 enthousiast ",
+        content: "Outhands Internet & Media",
       },
       { name: "format-detection", content: "telephone=no" },
     ],

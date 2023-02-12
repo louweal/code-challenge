@@ -1,132 +1,230 @@
 <template>
   <main>
-    <hero />
+    <!-- Hero -->
+    <!-- <hero /> -->
 
-    <section class="h-100 py-5" id="about">
-      <div class="row min-vh-100">
-        <div class="col-12 col-md-6 align-self-center mb-5 mb-md-0">
-          <h2 class="text-secondary">{{ $options.about.title }}</h2>
+    <!-- Diensten -->
+    <section>
+      <div class="container-lg">
+        <div class="row">
+          <div class="col-12 col-lg-6">
+            <h2>
+              Sed ut perspiciatis <br />
+              unde omnis iste
+            </h2>
 
-          <p v-for="(p, i) in $options.about.content" :key="i">{{ p }}</p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur
+              <span class="fw-bold">adipiscing</span> elit, sed do eiusmod
+              <span class="fw-bold">tempor incididunt</span> ut labore et dolore
+              magna aliqua consectetur adipiscing .
+            </p>
 
-          <div class="row mb-3">
-            <div
-              class="col-6 col-sm-4"
-              v-for="(t, i) in $options.about.tech"
-              :key="i"
-            >
-              <i
-                class="bi bi-arrow-right-short text-secondary align-middle"
-              ></i>
-              {{ t }}
+            <text-link title="Bekijk al onze diensten" path="/diensten" />
+          </div>
+
+          <div
+            class="col-12 col-lg-3"
+            v-for="(d, i) in $options.diensten"
+            :key="i"
+          >
+            <service-card :data="d" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nieuws / USPS / CTA -->
+    <section class="section-blob">
+      <div class="container-lg py-4 my-4 py-lg-5 my-lg-5">
+        <div class="row h-100 d-flex-row align-items-lg-end">
+          <div class="col-12 col-12-np col-lg-6">
+            <div class="bg-light-90 border-radius-c py-5 px-4">
+              <h2 class="mb-3">Het laatste nieuws</h2>
+
+              <nuxt-link
+                to="/news/news-slug"
+                v-for="(n, i) in $options.news"
+                :key="i"
+                class="d-block mb-2"
+              >
+                <h4 class="fs-6 mb-0">
+                  {{ n.title.slice(0, maxNewsTitleLength) }}
+                  {{ n.title.length > maxNewsTitleLength ? "..." : "" }}
+                </h4>
+                <time :datetime="n.date">
+                  {{
+                    new Date(n.date * 1000).toLocaleDateString("nl-DU", {
+                      day: "numeric",
+                      month: "long",
+                      year: "numeric",
+                    })
+                  }}
+                </time>
+              </nuxt-link>
+
+              <text-link
+                title="Bekijk al onze nieuwsberichten"
+                path="/nieuws"
+              />
             </div>
           </div>
-          * I'm planning to use another headless CMS in the future
-        </div>
+          <div class="col-12 col-12-np col-lg-6 h-100">
+            <div class="px-4">
+              <h4 class="fw-semibold">De voordelen van Outhands</h4>
 
+              <ul class="list-unstyled mb-4 mb-lg-5">
+                <li class="d-flex align-items-center lh-1">
+                  <i class="bi bi-check-lg text-success fs-3 me-2"></i>Cras
+                  justo odio
+                </li>
+                <li class="d-flex align-items-center lh-1">
+                  <i class="bi bi-check-lg text-success fs-3 me-2"></i>Dapibus
+                  ac facilisis in
+                </li>
+                <li class="d-flex align-items-center lh-1">
+                  <i class="bi bi-check-lg text-success fs-3 me-2"></i>Morbi leo
+                  risus
+                </li>
+
+                <li class="d-flex align-items-center lh-1">
+                  <i class="bi bi-check-lg text-success fs-3 me-2"></i
+                  >Vestibulum at eros
+                </li>
+              </ul>
+            </div>
+
+            <div class="bg-linear-gradient border-radius-c mt-3 px-4 py-4">
+              <h4>Teruggebeld worden?</h4>
+
+              <p>
+                Wij geven de voorkeur aan een persoonlijk gesprek. Laat je
+                telefoonnummer achter.
+              </p>
+
+              <form class="form-inline my-2 my-lg-0 position-relative">
+                <input
+                  class="form-control xxmr-sm-2"
+                  type="text"
+                  placeholder="Telefoonnummer"
+                  aria-label="Telefoonnummer"
+                />
+                <button
+                  type="submit"
+                  class="btn btn-secondary position-absolute end-0 top-0 text-white"
+                >
+                  Bel mij terug
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Over ons -->
+    <section>
+      <div class="container-lg py-4 my-4 py-lg-5 my-lg-5">
+        <div class="row">
+          <div class="col-12 col-lg-5 mb-4">
+            <h2>Kennis van ons vak en dat van u</h2>
+
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip.
+            </p>
+
+            <text-link title="Meer over ons" path="/over-ons" />
+          </div>
+          <div class="col-12 col-12-nrp col-lg-6 offset-lg-1">
+            <team-swiper persons-per-page="2" class="d-lg-none" />
+            <team-swiper persons-per-page="3" class="d-none d-lg-block" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Over ons 2 -->
+    <section>
+      <div
+        class="container-lg bg-linear-gradient border-radius-c-large position-relative"
+      >
         <div
-          class="col-10 offset-1 col-sm-8 offset-sm-2 col-md-5 offset-md-1 col-xl-5 align-self-center"
-        >
-          <div class="img-c">
-            <img
-              :src="require(`~/images/${$options.about.visual}`)"
-              alt="anneloes"
-              class="img-fluid rounded-3"
-            />
+          class="d-none d-lg-block position-absolute w-100 h-100"
+          style="background-repeat: no-repeat; background-position: top right"
+          :style="{
+            backgroundImage: `url(${require('@/images/Hand.svg')}`,
+          }"
+        ></div>
+        <div class="row py-5 px-1 p-lg-5">
+          <div class="col-12 col-lg-8">
+            <h2 class="mb-3">
+              Dit is Outhands Internet & Media <br />
+              Full Service Digital Agency
+            </h2>
+
+            <p>
+              Binnen ons gevarieerde team brengt ieder persoon zijn eigen mening
+              en specialisatie mee. Samen vormt dit de basis om een goed en
+              uniek product neer te zetten. De een ontwerpt een huisstijl die
+              perfect aansluit bij jouw bedrijf, terwijl de ander zorgt dat de
+              website pixel-perfect in elkaar zit.
+            </p>
+
+            <p>
+              Werken bij Outhands betekent werken in een creatieve en informele
+              organisatie. De combinatie van creativiteit, professionaliteit en
+              een prettige sfeer maakt werken bij en met Outhands een ervaring
+              op zich. Met een gedreven team specialisten werken we met passie
+              aan jouw product. Het product staat centraal, of het nu gaat om
+              een website op maat of het drukwerk van jouw bedrijf. Ook na 13
+              jaar blijven we ontwikkelen en staat flexibiliteit bij ons voorop.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="h-100 py-5" id="projects">
-      <div class="row min-vh-100 align-self-center">
-        <div class="col-12 align-self-center">
-          <h2 class="text-secondary">{{ $options.projects.title }}</h2>
+    <!-- Werken bij -->
+    <section>
+      <div class="container-lg pt-5 pb-lg-5">
+        <div class="row">
+          <div class="col-12 col-lg-5 align-self-center pb-5 pb-lg-0">
+            <h3 class="h4">Onze kernwaarde</h3>
 
-          <div class="col-11 col-sm-8 col-md-6 col-lg-5 mb-5">
-            <p v-for="(p, i) in $options.projects.content" :key="i">{{ p }}</p>
-          </div>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate veli.
+            </p>
 
-          <div class="row">
-            <div
-              class="col-12 col-md-6 col-lg-4 mb-4"
-              :key="i"
-              v-for="(p, i) in $options.projects.list.slice(
-                0,
-                $store.state.maxProjects
-              )"
+            <nuxt-link to="/werken-bij" class="btn btn-secondary text-white"
+              >Kom werken bij Outhands</nuxt-link
             >
-              <project :project="p" />
-            </div>
-
-            <div
-              class="text-center mt-3"
-              v-if="$options.projects.list.length > $store.state.maxProjects"
-            >
-              <div class="btn btn-secondary" @click="loadMoreProjects()">
-                More projects
-              </div>
+          </div>
+          <div class="col-12 col-12-np col-lg-7">
+            <div class="bg-light ratio ratio-10x7">
+              <div
+                class="border-radius-c"
+                style="background-size: cover; background-position: center"
+                :style="{
+                  backgroundImage: `url(${require('@/images/kernwaarde-visual.jpg')}`,
+                }"
+              ></div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="h-100 py-5" id="posts">
-      <div class="row min-vh-100 align-self-center">
-        <div class="col-12 align-self-center">
-          <h2 class="text-secondary">{{ $options.posts.title }}</h2>
-
-          <div class="col-11 col-sm-8 col-md-6 col-lg-5 mb-5">
-            <p v-for="(p, i) in $options.posts.content" :key="i">{{ p }}</p>
-          </div>
-
-          <div class="row">
-            <div
-              class="col-12 col-md-6 mb-4"
-              v-for="(p, i) in $options.posts.list.slice(
-                0,
-                $store.state.maxPosts
-              )"
-              :key="i"
-            >
-              <post :post="p" />
-            </div>
-
-            <div
-              class="text-center mt-3"
-              v-if="$options.posts.list.length > $store.state.maxPosts"
-            >
-              <div class="btn btn-secondary" @click="loadMorePosts()">
-                More posts
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="h-100 py-5" id="contact">
-      <div class="row min-vh-100">
-        <div class="col-12 col-md-5 align-self-center mb-5 mb-md-0">
-          <h2 class="text-secondary">{{ $options.contact.title }}</h2>
-
-          <p v-for="(p, i) in $options.contact.content" :key="i">{{ p }}</p>
-
-          <div class="row mb-3">
-            <div class="col-6" v-for="(s, i) in $options.socials" :key="i">
-              <a :href="s.url" target="_blank">
-                <i :class="`bi bi-${s.icon} bi-16 me-2 align-middle`"></i>
-                <span class="align-middle">{{ s.title }}</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div
-          class="col-12 col-md-7 offset-lg-1 col-lg-6 col-xl-5 align-self-center"
-        >
-          <form-contact />
         </div>
       </div>
     </section>
@@ -134,34 +232,19 @@
 </template>
 
 <script>
-import about from "@/data/about.json";
-import projects from "@/data/projects.json";
-import posts from "@/data/posts.json";
-import socials from "@/data/socials.json";
-import contact from "@/data/contact.json";
+import news from "@/data/news.json";
+import diensten from "@/data/diensten.json";
+import ServiceCard from "../components/ServiceCard.vue";
 
 export default {
-  name: "Main",
+  components: { ServiceCard },
+  news: news.sort((a, b) => (a.date > b.date ? -1 : 1)),
+  diensten,
 
-  transition: "page",
-
-  about,
-  projects,
-  posts,
-  socials,
-  contact,
-
-  methods: {
-    loadMoreProjects() {
-      this.$store.commit(
-        "updateMaxProjects",
-        this.$store.state.maxProjects + 3
-      );
-    },
-
-    loadMorePosts() {
-      this.$store.commit("updateMaxPosts", this.$store.state.maxPosts + 2);
-    },
+  data() {
+    return {
+      maxNewsTitleLength: 55,
+    };
   },
 };
 </script>

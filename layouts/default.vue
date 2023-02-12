@@ -1,11 +1,8 @@
 <template>
   <div id="app">
-    <div class="container-lg">
-      <Header />
-
-      <Nuxt />
-    </div>
-    <Footer v-if="$route.path !== '/nav'" />
+    <Header />
+    <Nuxt />
+    <Footer />
   </div>
 </template>
 

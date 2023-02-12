@@ -1,8 +1,13 @@
 <template>
-  <nav class="navbar navbar-expand-lg p-md-3 px-lg-5">
+  <nav class="navbar navbar-expand-lg p-md-3 px-lg-5 bg-primary">
     <div class="container-fluid">
       <nuxt-link to="/" event="" @click.native="scrollToTop()">
-        <img src="@/images/louweal.svg" alt="" width="134" height="38" />
+        <img
+          src="@/images/outhands-wit.svg"
+          alt="Outhands"
+          width="177"
+          height="42.32"
+        />
       </nuxt-link>
       <div
         @click="$route.path === '/nav' ? $router.back() : $router.push('/nav')"

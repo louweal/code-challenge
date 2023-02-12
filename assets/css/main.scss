@@ -98,10 +98,10 @@ $input-placeholder-color: rgba(#444, 0.3);
 
 :root {
   --primary-c: #ffcc00;
-  --body-color-c: #242424;
 }
 
 body {
+  width: 100%;
   &.disable-scroll {
     overflow-y: hidden;
     position: fixed;
@@ -180,7 +180,7 @@ a {
 
   @include media-breakpoint-up(lg) {
     background: linear-gradient(126deg, $primary 0%, var(--primary-c) 100%);
-    color: var(--body-color-c);
+    color: $dark;
   }
 }
 
@@ -223,19 +223,22 @@ a {
 .hero-blob {
   overflow: visible;
   &::before {
-    transform: translate(0%, -28%);
+    transform: translate(0%, -18%);
     content: "";
     // border: 2px solid green;
     position: absolute;
     width: min(100vw, 1395.653px);
     height: min(98vw, 1365.653px);
     z-index: -1;
+    background-size: cover;
     background-position: top left;
     background-repeat: no-repeat;
-    background-size: contain;
     background-image: url("@/images/blob-hero.svg");
 
     @include media-breakpoint-up(lg) {
+      transform: translate(0%, -28%);
+      background-size: contain;
+
       // width: 1395.653px;
       // height: 1365.653px;
     }

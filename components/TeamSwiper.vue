@@ -42,7 +42,6 @@ export default {
   data() {
     return {
       page: 1,
-      personsPerPage: 3,
     };
   },
 

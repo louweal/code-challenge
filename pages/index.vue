@@ -24,7 +24,7 @@
           </div>
 
           <div
-            class="col-12 col-lg-3"
+            class="col-12 col-sm-8 col-lg-3"
             v-for="(d, i) in $options.diensten"
             :key="i"
           >
@@ -39,7 +39,9 @@
       <div class="container-lg my-5 py-lg-5 my-lg-5">
         <div class="row h-100 d-flex-row align-items-lg-end">
           <div class="col-12 col-12-np col-lg-6">
-            <div class="bg-light-90 border-radius-c py-5 px-4">
+            <div
+              class="bg-light-90 border-radius-c mb-4 mb-lg-0 py-4 py-lg-5 px-4"
+            >
               <h2 class="mb-3">Het laatste nieuws</h2>
 
               <nuxt-link
@@ -95,27 +97,34 @@
             </div>
 
             <div class="bg-linear-gradient border-radius-c mt-3 px-4 py-4">
-              <h4>Teruggebeld worden?</h4>
+              <h4 class="text-dark">Teruggebeld worden?</h4>
 
-              <p>
+              <p class="text-dark">
                 Wij geven de voorkeur aan een persoonlijk gesprek. Laat je
                 telefoonnummer achter.
               </p>
 
-              <form class="form-inline my-2 my-lg-0 position-relative">
+              <div class="form-inline my-2 my-lg-0 position-relative">
                 <input
-                  class="form-control xxmr-sm-2"
+                  class="form-control"
                   type="text"
                   placeholder="Telefoonnummer"
                   aria-label="Telefoonnummer"
                 />
                 <button
                   type="submit"
-                  class="btn btn-secondary position-absolute end-0 top-0 text-white"
+                  class="btn btn-secondary position-absolute d-none d-lg-block end-0 top-0 text-white"
                 >
                   Bel mij terug
                 </button>
-              </form>
+
+                <button
+                  type="submit"
+                  class="btn btn-secondary d-lg-none text-white mt-2"
+                >
+                  Bel mij terug
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -161,8 +170,7 @@
         <div class="row py-5 px-1 p-lg-5">
           <div class="col-12 col-lg-8">
             <h2 class="mb-3">
-              Dit is Outhands Internet & Media <br />
-              Full Service Digital Agency
+              Dit is Outhands Internet & Media Full Service Digital Agency
             </h2>
 
             <p>
@@ -234,10 +242,8 @@
 <script>
 import news from "@/data/news.json";
 import diensten from "@/data/diensten.json";
-import ServiceCard from "../components/ServiceCard.vue";
 
 export default {
-  components: { ServiceCard },
   news: news.sort((a, b) => (a.date > b.date ? -1 : 1)),
   diensten,
 

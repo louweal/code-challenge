@@ -1,8 +1,8 @@
 <template>
-  <section class="hero h-100 hero-blob py-lg-5 xxxmy-lg-5">
+  <section class="hero h-100 hero-blob py-lg-5">
     <div class="container-lg">
       <div class="row hero__content">
-        <div class="col-12 col-lg-6 align-self-center">
+        <div class="col-12 col-lg-6 align-self-center my-4 my-lg-0">
           <span class="fw-regular fs-4">Outhands Internet & Media</span>
 
           <h1>Dé partner in web- <br />sites en applicaties</h1>

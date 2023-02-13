@@ -11,14 +11,3 @@
     </section>
   </main>
 </template>
-
-<script>
-export default {
-  // props: {
-  //   error: {
-  //     type: Object,
-  //     default: () => {},
-  //   },
-  // },
-};
-</script>

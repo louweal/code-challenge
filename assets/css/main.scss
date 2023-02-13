@@ -206,7 +206,7 @@ a {
 .hero-blob {
   overflow: visible;
   &::before {
-    transform: translate(0%, -18%);
+    transform: translate(0%, -22%);
     content: "";
     position: absolute;
     width: min(100vw, 1395.653px);
@@ -228,7 +228,7 @@ a {
   overflow: visible;
   &::before {
     display: none;
-    transform: translate(-60%, -40%);
+    transform: translate(-60%, -15%);
     content: "";
     position: absolute;
     width: 1395.653px;

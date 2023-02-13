@@ -48,9 +48,9 @@
                 to="/news/news-slug"
                 v-for="(n, i) in $options.news"
                 :key="i"
-                class="d-block mb-2"
+                class="d-block mb-3"
               >
-                <h4 class="fs-6 mb-0">
+                <h4 class="fs-6 mb-1 lh-base">
                   {{ n.title.slice(0, maxNewsTitleLength) }}
                   {{ n.title.length > maxNewsTitleLength ? "..." : "" }}
                 </h4>
@@ -72,7 +72,7 @@
             </div>
           </div>
           <div class="col-12 col-12-np col-lg-6 h-100">
-            <div class="px-4">
+            <div class="px-4 py-3 py-lg-0">
               <h4 class="fw-semibold">De voordelen van Outhands</h4>
 
               <ul class="list-unstyled mb-4 mb-lg-5">
@@ -96,7 +96,8 @@
               </ul>
             </div>
 
-            <div class="bg-linear-gradient border-radius-c mt-3 px-5 py-5">
+            <!-- CTA -->
+            <div class="bg-linear-gradient border-radius-c mt-3 p-4 p-lg-5">
               <h4 class="text-dark">Teruggebeld worden?</h4>
 
               <p class="text-dark">
@@ -133,7 +134,7 @@
 
     <!-- Over ons -->
     <section>
-      <div class="container-lg py-4 my-4 py-lg-5 my-lg-5">
+      <div class="container-lg pb-4 py-lg-5 my-lg-5">
         <div class="row">
           <div class="col-12 col-lg-5 mb-4">
             <h2>Kennis van ons vak en dat van u</h2>

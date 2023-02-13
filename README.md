@@ -2,13 +2,13 @@
 
 ### Select node version
 
-On Linux/OSX
+On Linux/OSX:
 
 ```
 nvm use
 ```
 
-On Windows
+On Windows:
 
 ```
 nvm use 16.13.0
